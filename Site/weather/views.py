@@ -1,6 +1,8 @@
 import requests
 from django.shortcuts import render
+
 from .forms import CityForm
+import os
 
 def base(request):
     return render(request, 'home/about_me.html')
@@ -9,7 +11,7 @@ def chat(request):
     return render(request, 'home/chat.html')
 
 def weather(request):
-    api_key = "da15c26ab6d1141108dd9109703d50d7" # Ключ при регистрации на openweathermap
+    api_key = os.environ["api_wheather"] # Ключ при регистрации на openweathermap (В переменной окружения)
     city = "Москва" # Город по умолчанию
 
     if request.method == "POST":
