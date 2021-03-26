@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %} <!-- ПОПРОБЫВАТЬ БЕЗ -->
+
+{% block links %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/gallery.css' %}">
+{% endblock %}
+
+{% block title %}
+    Галерея
+{% endblock %}
+
+{% block content %} 
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  {% for album in albums %}
+  <div class="col">
+    <div class="card">
+        <a href="{% url "details" album.id %}">
+          <img src="{{ album.image.url }}" class="card-img-top" alt="...">
+        </a>
+      <div class="card-body">
+          <h4 class="card-title">{{ album.title }}</h4>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+{% endblock %}

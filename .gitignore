@@ -1,8 +1,8 @@
 *.pyc
-*~
 __pycache__
-V_ENV/*
 .env
 db.sqlite3
 img/*
 .DS_Store
+
+V_ENV/*

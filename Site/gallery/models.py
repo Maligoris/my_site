@@ -1,3 +1,16 @@
 from django.db import models
 
-# Create your models here.
+class Album(models.Model):
+    title = models.CharField(max_length = 50)
+    image = models.FileField(blank=True)
+
+    def __str__(self):
+        return self.title
+
+class Img(models.Model):
+    alb = models.ForeignKey(Album, default=None, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to ='images/')
+
+    def __str__(self):
+        return self.alb.title
+
