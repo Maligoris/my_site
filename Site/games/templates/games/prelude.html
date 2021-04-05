@@ -14,27 +14,26 @@
 
 {% block content %} 
 <div class="prelude">
-{% if messages %}
-    {% for message in messages %}
-        <div clas="alert alert-danger">
-            {{ message }}
-        <div>
-    {% endfor %}
-{% endif %}
-<form method="post">
-    {% csrf_token %}
-    <h3>КРЕСТИКИ НОЛИКИ</h3>
-    <p>Введите имя игрока</p>
-        <input name="username" class="form-control form-control-lg" type="text" placeholder="Имя игрока">
-    <p>Настройки игры</p>
-        <select name="option" class="custom-select custom-select-lg mb-3">
-          <option selected>Выбор</option>
-          <option value="1">Ввести код комнаты</option>
-          <option value="2">Создать комнату</option>
-        </select>
-    <p>Введите номер игровой комнаты</p>
-        <input name="room_code" class="form-control form-control-lg" type="text" placeholder="Номер игры">
-    <button type="submit" class="btn btn-secondary">Играть</button>
-<form>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-danger">
+                {{ message }}
+            <div>
+        {% endfor %}
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <h3>КРЕСТИКИ НОЛИКИ</h3>
+        <p>Введите имя игрока</p>
+            <input name="username" class="form-control form-control-lg" type="text" placeholder="Имя игрока">
+        <p>Настройки игры</p>
+            <select name="option" class="custom-select custom-select-lg mb-3">
+              <option value="0">Ввести код комнаты</option>
+              <option value="1">Создать комнату</option>
+            </select>
+        <p>Введите номер игровой комнаты</p>
+        <input name="room_code" class="form-control form-control-lg" type="text" placeholder="Номер игры"><br>
+        <button type="submit" class="btn btn-secondary" id="start_play">Играть</button>
+    <form>
 </div>
 {% endblock %}

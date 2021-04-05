@@ -23,10 +23,8 @@ ws_pattern = [
         path('ws/game/<room_code>', GameRoom)
 ]
 
-application = ProtocolTypeRouter(
-        {
+application = ProtocolTypeRouter({
             'websocket' : AuthMiddlewareStack(URLRouter(
                 ws_pattern
             ))
-        }
-)
+        })

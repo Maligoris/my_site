@@ -5,12 +5,23 @@
     align-items: center;
     justify-content: center;
 } 
+
 .main_back h3{
     text-align: center;
 }  
+
+#start_play {
+    margin-left: 40%;
+}
+
+.alert {
+    text-align: center;
+}
+
 .prelude {
     width: 30%;
 }
+
 footer {
     display: grid;
 }
