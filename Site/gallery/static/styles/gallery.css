@@ -1,4 +1,21 @@
+a, a:hover, a:focus {
+    text-decoration: none;
+    color: #ffda35;
+}
+
+.header_word {
+    display: inline-block;
+    line-height: 1; 
+	font-weight: 600;
+	font-size: 18px;
+    color: #FFDA35;
+}
+
+
 .card {
     width: 50%;
     text-align: center;
+    margin-left: 2%;
+    margin-top: 2%;
 }
+

@@ -1,3 +1,8 @@
+a, a:hover, a:focus { 
+    text-decoration: none; 
+    color: #ffda35;
+}
+
 .main_back {
     background-image: none;
     background-color: gray;

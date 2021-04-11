@@ -1,6 +1,5 @@
 a, a:hover, a:focus {
     text-decoration: none;
-    color: #ffda35;
 }
 
 .thumb { 
@@ -30,3 +29,6 @@ footer {
 	align-items: end;
 }
 
+header_word {
+    color: red;
+}

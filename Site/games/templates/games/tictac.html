@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %} <!-- ПОПРОБЫВАТЬ БЕЗ -->
+{% load static %}
 
 {% block links %}
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -44,7 +44,7 @@
     let username = "{{username}}"
     let player = username.charAt(0) // Клетки будут заполняться 1 символом игрока
 
-    let socket = new WebSocket("ws://localhost:8000/ws/game/" + room_code) // открывем веб-сокет
+    let socket = new WebSocket("ws://localhost:8000/ws/game/" + room_code) // открывем веб-сокет. TODO сделать wss (сделать перед этим https)
     let gameCellFields = ["","","","","","","","",""] // сохраняем ходы игроков в список 
     let elementArrayCells = document.querySelectorAll(".space") // все 9 клеток поля игры 
 
