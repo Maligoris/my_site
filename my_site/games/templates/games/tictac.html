@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block links %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="{% static 'styles/tictac.css' %}">
+{% endblock %}
+
+{% block title %}
+    Игра | {{room_code}}
+{% endblock %}
+
+{% block content %} 
+<div class="full-page" id="full-page">
+
+    <div class="game flex-column">
+        <div class="scoreboard">
+            <div class="player1">Player 1: {{creator}}</div>
+            <div class="player2">Player 2: {{opponent}}</div>
+        </div>
+        <div class="boardcontainer">
+            <div class="board">
+                <div data-cell-index="0" class="space"></div>
+                <div data-cell-index="1" class="space"></div>
+                <div data-cell-index="2" class="space"></div>
+                <div data-cell-index="3" class="space"></div>
+                <div data-cell-index="4" class="space"></div>
+                <div data-cell-index="5" class="space"></div>
+                <div data-cell-index="6" class="space"></div>
+                <div data-cell-index="7" class="space"></div>
+                <div data-cell-index="8" class="space"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block links_js %}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+    /* при выносе в отдельный файл и подключение через шаблон Django происходит ошибка Firefox can’t establish a connection to the server at ws://localhost:8000/ws/game/%7B%7Broom_code%7D%7D. */
+    let room_code = "{{room_code}}"
+    let username = "{{username}}"
+    let player = username.charAt(0) // Клетки будут заполняться 1 символом игрока
+
+    let socket = new WebSocket("ws://localhost:8000/ws/game/" + room_code) // открывем веб-сокет. TODO сделать wss (сделать перед этим https)
+    let gameCellFields = ["","","","","","","","",""] // сохраняем ходы игроков в список 
+    let elementArrayCells = document.querySelectorAll(".space") // все 9 клеток поля игры 
+
+    elementArrayCells.forEach(function(elem){
+        elem.addEventListener("click", function (event){
+            const path = event.composedPath(); // путь к событию (список с HTML элементами страницы)
+            setText(path[0].getAttribute("data-cell-index"), player) // Печатаем в клетку которую выбрал игрок 1 букву
+        })
+    })
+
+
+    // Проверяем заполненность всех клеток
+    function checkGameEnd(){
+        let count = 0;
+        gameCellFields.map((game)=>{
+            if(game != ""){
+                count++;
+            }
+        })
+        
+        // Все поля заполнены, но никто не выйграл
+        if(count >= 9){ 
+            let data = {"type" : "over"}
+            socket.send(JSON.stringify({data}))
+            swal("Конец игры!", "Ничья", "warning")   
+        }
+    }
+
+
+    function checkWon(value, player){
+        let won = false;
+
+        if(gameCellFields[0] === value && gameCellFields[1] == value && gameCellFields[2] == value){
+            won = true;
+        }else if(gameCellFields[3] === value && gameCellFields[4] == value && gameCellFields[5] == value){
+            won = true
+        }else if(gameCellFields[6] === value && gameCellFields[7] == value && gameCellFields[8] == value){
+            won = true
+        }else if(gameCellFields[0] === value && gameCellFields[3] == value && gameCellFields[6] == value){
+            won = true
+        }else if(gameCellFields[1] === value && gameCellFields[4] == value && gameCellFields[7] == value){
+            won = true
+        }else if(gameCellFields[2] === value && gameCellFields[5] == value && gameCellFields[8] == value){
+            won = true
+        }else if(gameCellFields[0] === value && gameCellFields[4] == value && gameCellFields[8] == value){
+            won = true
+        }else if(gameCellFields[2] === value && gameCellFields[4] == value && gameCellFields[6] == value){
+            won = true
+        }
+
+        if(won){
+            let data = {"type" : "end", "player" : player}
+            socket.send(JSON.stringify({data}))
+            swal("Поздравляем!", "Вы выйграли", "success")
+        }
+
+        checkGameEnd();
+    }
+
+
+    function setText(index , value){
+        let data = {
+            "player" : player,
+            "index" : index,
+            "type" : "running"
+        }
+
+        // Если выбранная клетка == ""
+        if(gameCellFields[parseInt(index)] == ""){
+        gameCellFields[parseInt(index)] = value
+        elementArrayCells[parseInt(index)].innerHTML = value
+        
+        socket.send(JSON.stringify({
+            data
+        }))
+
+        checkWon(value , player)
+        }else{
+            alert("Вы не можете заполнить это поле")
+        }
+    }
+
+    // Вставляем ход противника в клетку текущего игрока, принимает index == номер клетки и value == 1 букву игрока
+    function setAnotherUserText(index , value){
+        gameCellFields[parseInt(index)] = value
+        elementArrayCells[parseInt(index)].innerHTML = value
+    }
+
+    socket.onopen = function (e){
+        console.log("Socket connected")
+    }
+
+// is_over = True ТУТ наверно
+    socket.onmessage = function (e){
+        let data = JSON.parse(e.data) // data - объект с ником игрока, номером ячейки и остоянием игры
+        if(data.payload.type == "end" && data.payload.player !== player){
+            swal("Упс!" , "Вы проиграли" , "error")
+        }else if(data.payload.type == "over"){
+            swal("Конец игры!" , "Ничья" , "warning")
+            return;
+        }else if(data.payload.type == "running" && data.payload.player !== player){
+            setAnotherUserText(data.payload.index , data.payload.player) 
+        }
+    }
+
+    socket.onclose = function (e){
+        console.log("Socket closed")
+    }
+    </script>
+{% endblock %}

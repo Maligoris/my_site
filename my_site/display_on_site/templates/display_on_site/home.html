@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block links %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/weather.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/chat.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/home.css' %}">
+{% endblock %}
+
+{% block chat %}
+    {% include "chat/chat.html" %}
+{% endblock %}
+
+{% block weather %}
+    {% include "weather/weather.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="welcome_text">
+<span>
+    Приветствую вас на своем сайте!<br>
+    Он еще в разработке...<br>
+    Немного терпения:)<br>
+</span>
+</div>
+{% endblock %}
+
+
+{% block links_js %}
+    <script type="text/javascript" src="{% static 'js/chat.js' %}"></script>
+{% endblock %}

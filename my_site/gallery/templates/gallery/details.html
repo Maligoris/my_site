@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block links %}
+<link href="{% static 'bootstrap-3.3.2/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'fancybox/jquery.fancybox.css' %}" type="text/css" media="screen">
+    <link rel="stylesheet" href="{% static 'styles/bootstrapDetails.css' %}" type="text/css">
+{% endblock %}
+
+{% block content %} 
+<div class="container">
+    <div class="row">
+      {% for p in photos %}
+      <div class="col-md-3 col-sm-4 col-xs-6 thumb"> 
+        <a class="fancyimage" rel="group" href="{{ p.image.url }}">
+          <img class="img-responsive" src="{{ p.image.url }}"/>
+        </a>
+      </div>
+      {% endfor %} 
+    </div>
+  </div>
+{% endblock %}
+
+{% block links_js %}
+  <script src="{% static 'jquery/jquery-1.11.2.min.js' %}"></script>
+  <script src="{% static 'bootstrap-3.3.2/js/bootstrap.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'fancybox/jquery.fancybox.pack.js' %}"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("a.fancyimage").fancybox();
+    });
+  </script>
+{% endblock %}
