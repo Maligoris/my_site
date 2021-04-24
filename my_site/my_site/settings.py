@@ -141,5 +141,6 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # при команде collectstatic в эту папку будут стекать все static файлы
 STATIC_URL = '/static/'
+STATIC_DIRS = os.path.join(BASE_DIR, 'static') # исправление ошибки Heroku: Error while running '$ python my_site/manage.py collectstatic --noinput'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
