@@ -7,7 +7,7 @@ def album_view(request):
     return render(request, 'gallery/gallery.html', {'albums': albums})
 
 def open_album(request, id):
-    album = get_object_or_404(Img, id=id) # Н
+    album = get_object_or_404(Img, id=id)
     photos = Img.objects.all() #filter(album=album)
     return render(request, 'gallery/details.html', {
         'album': album,

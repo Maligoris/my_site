@@ -42,7 +42,7 @@
     /* при выносе в отдельный файл и подключение через шаблон Django происходит ошибка Firefox can’t establish a connection to the server at ws://localhost:8000/ws/game/%7B%7Broom_code%7D%7D. */
     let room_code = "{{room_code}}"
     let username = "{{username}}"
-    let player = username.charAt(0) // Клетки будут заполняться 1 символом игрока
+    let player = username.charAt(0) // Клетки будут заполняться 1 символом игрока. TODO сделать исключение если 1 буква совпадает в никах 2 игроков
 
     let socket = new WebSocket("ws://localhost:8000/ws/game/" + room_code) // открывем веб-сокет. TODO сделать wss (сделать перед этим https)
     let gameCellFields = ["","","","","","","","",""] // сохраняем ходы игроков в список 
