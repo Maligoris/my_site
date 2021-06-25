@@ -4,6 +4,7 @@ a, a:hover, a:focus {
 }
 
 .header_word {
+    font-family: 'PT Sans', sans-serif!important;
     display: inline-block;
     line-height: 1; 
 	font-weight: 600;

@@ -24,19 +24,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.environ['S_KEY'] # Ключ в переменной окружения
+SECRET_KEY = 're8w0eg-(2h#+936yt4n%dqy6--tkwsr6ofu(+v))u*qo4sd_x' # Ключ в переменной окружения
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://lamdel.com/', 'lamdel.com', 'www.lamdel.com', 'localhost']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -94,7 +93,7 @@ DATABASES = {
         'USER': 'my_site_user',
         'PASSWORD': 'cthtuf1',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': ''
     }
 }
 
@@ -117,7 +116,6 @@ CACHES = {
         }
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
