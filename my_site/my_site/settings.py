@@ -28,7 +28,7 @@ SECRET_KEY = 're8w0eg-(2h#+936yt4n%dqy6--tkwsr6ofu(+v))u*qo4sd_x' # Ключ в 
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['https://lamdel.com/', 'lamdel.com', 'www.lamdel.com', 'localhost']
 
@@ -90,8 +90,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'my_site',
-        'USER': 'my_site_user',
-        'PASSWORD': 'cthtuf1',
+        'USER': 'my_site_user', # Брать из переменной окружения
+        'PASSWORD': 'cthtuf1',  # Брать из переменной окружения
         'HOST': 'localhost',
         'PORT': ''
     }

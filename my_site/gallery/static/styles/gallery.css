@@ -3,16 +3,6 @@ a, a:hover, a:focus {
     color: #ffda35;
 }
 
-.header_word {
-    font-family: 'PT Sans', sans-serif!important;
-    display: inline-block;
-    line-height: 1; 
-	font-weight: 600;
-	font-size: 18px;
-    color: #FFDA35;
-}
-
-
 .card {
     width: 50%;
     text-align: center;

@@ -16,7 +16,7 @@
   {% for album in albums %}
   <div class="col">
     <div class="card">
-        <a href="{% url "details" album.id %}">
+        <a href="{% url "details" album.title %}">
           <img src="{{ album.image.url }}" class="card-img-top" alt="...">
         </a>
       <div class="card-body">

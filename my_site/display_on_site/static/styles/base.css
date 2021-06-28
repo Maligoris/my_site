@@ -1,7 +1,7 @@
 /* Стили Bootstrap могут переписывать стили которые уже используются тут */
 *{margin: 0; padding: 0;}
 a, a:hover, a:focus {text-decoration: none;}
-body {font-family: 'PT Sans', sans-serif;}
+body {font-family: 'PT Sans', sans-serif!important;}
 
 /* --------------ВЕРХ------------------------ */
 header {

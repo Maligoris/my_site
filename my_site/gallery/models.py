@@ -8,7 +8,11 @@ class Album(models.Model):
         return self.title
 
 class Img(models.Model):
-    alb = models.ForeignKey(Album, default=None, on_delete=models.CASCADE)
+    alb = models.ForeignKey(Album,
+                            default=None,
+                            on_delete=models.CASCADE,
+                            related_name='imgs'
+                           )
     image = models.ImageField(upload_to ='images/')
 
     def __str__(self):
