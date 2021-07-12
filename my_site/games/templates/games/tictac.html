@@ -44,7 +44,7 @@
     let username = "{{username}}"
     let player = username.charAt(0) // Клетки будут заполняться 1 символом игрока. TODO сделать исключение если 1 буква совпадает в никах 2 игроков
 
-    let socket = new WebSocket("ws://localhost:8000/ws/game/" + room_code) // открывем веб-сокет. TODO сделать wss (сделать перед этим https)
+    let socket = new WebSocket("ws://localhost:8000/ws/game/" + room_code) // открывем веб-сокет. TODO сделать wss (когда будет https)
     let gameCellFields = ["","","","","","","","",""] // сохраняем ходы игроков в список 
     let elementArrayCells = document.querySelectorAll(".space") // все 9 клеток поля игры 
 
@@ -105,7 +105,7 @@
     }
 
 
-    function setText(index , value){
+    function setText(index, value){
         let data = {
             "player" : player,
             "index" : index,
@@ -121,14 +121,14 @@
             data
         }))
 
-        checkWon(value , player)
+        checkWon(value, player)
         }else{
             alert("Вы не можете заполнить это поле")
         }
     }
 
     // Вставляем ход противника в клетку текущего игрока, принимает index == номер клетки и value == 1 букву игрока
-    function setAnotherUserText(index , value){
+    function setAnotherUserText(index, value){
         gameCellFields[parseInt(index)] = value
         elementArrayCells[parseInt(index)].innerHTML = value
     }
@@ -137,16 +137,15 @@
         console.log("Socket connected")
     }
 
-// is_over = True ТУТ наверно
     socket.onmessage = function (e){
         let data = JSON.parse(e.data) // data - объект с ником игрока, номером ячейки и остоянием игры
         if(data.payload.type == "end" && data.payload.player !== player){
-            swal("Упс!" , "Вы проиграли" , "error")
+            swal("Упс!", "Вы проиграли", "error")
         }else if(data.payload.type == "over"){
-            swal("Конец игры!" , "Ничья" , "warning")
+            swal("Конец игры!", "Ничья", "warning")
             return;
         }else if(data.payload.type == "running" && data.payload.player !== player){
-            setAnotherUserText(data.payload.index , data.payload.player) 
+            setAnotherUserText(data.payload.index, data.payload.player) 
         }
     }
 

@@ -2,7 +2,7 @@ from django.db import models
 
 def opponent_default():
     """
-    Рекомендованный способ заполнения дефолтных полей
+    Рекомендованный способ заполнения дефолтных полей:
     https://docs.djangoproject.com/en/3.1/ref/models/fields/#default
     """
     return ("opponent")

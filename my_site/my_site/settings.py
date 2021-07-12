@@ -24,18 +24,19 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = 're8w0eg-(2h#+936yt4n%dqy6--tkwsr6ofu(+v))u*qo4sd_x' # Ключ в переменной окружения
+SECRET_KEY = os.environ['S_KEY'] # Ключ в переменной окружения
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['https://lamdel.com/', 'lamdel.com', 'www.lamdel.com', 'localhost']
+ALLOWED_HOSTS = ['lamdel.com', 'www.lamdel.com', 'localhost']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -90,10 +91,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'my_site',
-        'USER': 'my_site_user', # Брать из переменной окружения
+        'USER': 'my_site_user', # На серевере брать из переменной окружения
         'PASSWORD': 'cthtuf1',  # Брать из переменной окружения
         'HOST': 'localhost',
-        'PORT': ''
+        'PORT': '',
+        'TEST': {
+            'NAME': 'test_my_site',
+        },
     }
 }
 
@@ -105,7 +109,6 @@ CHANNEL_LAYERS = {
         },
     },
 }
-
 
 CACHES = {
     "default": {

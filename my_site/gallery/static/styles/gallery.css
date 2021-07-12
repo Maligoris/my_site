@@ -10,3 +10,7 @@ a, a:hover, a:focus {
     margin-top: 2%;
 }
 
+.col {
+    display: grid;
+    justify-items: center;
+}

@@ -35,9 +35,6 @@ def tictac(request, room_code):
     creator = game.game_creator
     opponent = game.game_opponent
 
-#    if game.is_over:
-#        return redirect('http://localhost:8000/games/')
-
     username = request.GET.get('username')
     context = { 'room_code' : room_code,
                  'username' : username,
