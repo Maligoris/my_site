@@ -28,7 +28,7 @@ SECRET_KEY = os.environ['S_KEY'] # Ключ в переменной окруже
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['lamdel.com', 'www.lamdel.com', 'localhost']
 

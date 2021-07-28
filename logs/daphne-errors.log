@@ -1,25 +1,20 @@
-2021-07-12 18:41:34,753 INFO     Starting server at fd:fileno=0, unix:/home/maligoris/Desktop/site_on_dj/run/daphne1.sock
-2021-07-12 18:41:34,753 INFO     HTTP/2 support not enabled (install the http2 and tls Twisted extras)
-2021-07-12 18:41:34,753 INFO     Configuring endpoint fd:fileno=0
-2021-07-12 18:41:34,770 INFO     Listening on TCP address 127.0.0.1:8000
-2021-07-12 18:41:34,770 INFO     Configuring endpoint unix:/home/maligoris/Desktop/site_on_dj/run/daphne1.sock
-2021-07-12 18:41:34,791 INFO     Starting server at fd:fileno=0, unix:/home/maligoris/Desktop/site_on_dj/run/daphne0.sock
-2021-07-12 18:41:34,792 INFO     HTTP/2 support not enabled (install the http2 and tls Twisted extras)
-2021-07-12 18:41:34,792 INFO     Configuring endpoint fd:fileno=0
-2021-07-12 18:41:34,797 INFO     Starting server at fd:fileno=0, unix:/home/maligoris/Desktop/site_on_dj/run/daphne3.sock
-2021-07-12 18:41:34,798 INFO     HTTP/2 support not enabled (install the http2 and tls Twisted extras)
-2021-07-12 18:41:34,798 INFO     Configuring endpoint fd:fileno=0
-2021-07-12 18:41:34,808 INFO     Listening on TCP address 127.0.0.1:8000
-2021-07-12 18:41:34,808 INFO     Configuring endpoint unix:/home/maligoris/Desktop/site_on_dj/run/daphne0.sock
-2021-07-12 18:41:34,809 INFO     Listening on TCP address 127.0.0.1:8000
-2021-07-12 18:41:34,809 INFO     Configuring endpoint unix:/home/maligoris/Desktop/site_on_dj/run/daphne3.sock
-2021-07-12 18:41:34,841 INFO     Starting server at fd:fileno=0, unix:/home/maligoris/Desktop/site_on_dj/run/daphne2.sock
-2021-07-12 18:41:34,841 INFO     HTTP/2 support not enabled (install the http2 and tls Twisted extras)
-2021-07-12 18:41:34,842 INFO     Configuring endpoint fd:fileno=0
-2021-07-12 18:41:34,851 INFO     Listening on TCP address 127.0.0.1:8000
-2021-07-12 18:41:34,851 INFO     Configuring endpoint unix:/home/maligoris/Desktop/site_on_dj/run/daphne2.sock
-2021-07-12 18:41:51,624 INFO     Killed 0 pending application instances
-127.0.0.1:0 - - [12/Jul/2021:18:41:36] "GET /" 200 4412
-2021-07-12 18:41:51,624 INFO     Killed 0 pending application instances
-2021-07-12 18:41:51,624 INFO     Killed 0 pending application instances
-2021-07-12 18:41:51,626 INFO     Killed 0 pending application instances
+2021-07-28 15:08:24,819 INFO     Starting server at fd:fileno=0, unix:/home/maligoris/Desktop/site_on_dj/run/daphne1.sock
+2021-07-28 15:08:24,820 INFO     Starting server at fd:fileno=0, unix:/home/maligoris/Desktop/site_on_dj/run/daphne0.sock
+2021-07-28 15:08:24,820 INFO     Starting server at fd:fileno=0, unix:/home/maligoris/Desktop/site_on_dj/run/daphne3.sock
+2021-07-28 15:08:24,820 INFO     HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2021-07-28 15:08:24,820 INFO     HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2021-07-28 15:08:24,820 INFO     Configuring endpoint fd:fileno=0
+2021-07-28 15:08:24,820 INFO     Configuring endpoint fd:fileno=0
+2021-07-28 15:08:24,821 INFO     HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2021-07-28 15:08:24,822 INFO     Configuring endpoint fd:fileno=0
+2021-07-28 15:08:24,825 INFO     Starting server at fd:fileno=0, unix:/home/maligoris/Desktop/site_on_dj/run/daphne2.sock
+2021-07-28 15:08:24,825 INFO     HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+2021-07-28 15:08:24,825 INFO     Configuring endpoint fd:fileno=0
+2021-07-28 15:08:24,846 INFO     Listening on TCP address 127.0.0.1:8000
+2021-07-28 15:08:24,846 INFO     Listening on TCP address 127.0.0.1:8000
+2021-07-28 15:08:24,847 INFO     Configuring endpoint unix:/home/maligoris/Desktop/site_on_dj/run/daphne1.sock
+2021-07-28 15:08:24,847 INFO     Configuring endpoint unix:/home/maligoris/Desktop/site_on_dj/run/daphne0.sock
+2021-07-28 15:08:24,847 INFO     Listening on TCP address 127.0.0.1:8000
+2021-07-28 15:08:24,848 INFO     Configuring endpoint unix:/home/maligoris/Desktop/site_on_dj/run/daphne3.sock
+2021-07-28 15:08:24,848 INFO     Listening on TCP address 127.0.0.1:8000
+2021-07-28 15:08:24,850 INFO     Configuring endpoint unix:/home/maligoris/Desktop/site_on_dj/run/daphne2.sock

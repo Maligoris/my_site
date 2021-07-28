@@ -1,1 +1,0 @@
-2021/07/12 18:41:36 [error] 11969#11969: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: _, request: "GET / HTTP/1.1", upstream: "http://[::1]:8000/", host: "localhost", referrer: "http://localhost/"
