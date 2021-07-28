@@ -18,3 +18,7 @@
 2021-07-28 15:08:24,848 INFO     Configuring endpoint unix:/home/maligoris/Desktop/site_on_dj/run/daphne3.sock
 2021-07-28 15:08:24,848 INFO     Listening on TCP address 127.0.0.1:8000
 2021-07-28 15:08:24,850 INFO     Configuring endpoint unix:/home/maligoris/Desktop/site_on_dj/run/daphne2.sock
+2021-07-28 15:13:38,590 INFO     Killed 0 pending application instances
+2021-07-28 15:13:38,590 INFO     Killed 0 pending application instances
+2021-07-28 15:13:38,590 INFO     Killed 0 pending application instances
+2021-07-28 15:13:38,592 INFO     Killed 0 pending application instances

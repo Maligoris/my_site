@@ -1,0 +1,117 @@
+/* Стили Bootstrap могут переписывать стили которые уже используются тут */
+*{margin: 0; padding: 0;}
+a, a:hover, a:focus {text-decoration: none;}
+body {font-family: 'PT Sans', sans-serif!important;}
+
+/* --------------ВЕРХ------------------------ */
+header {
+	background-color: rgb(39, 39, 39);
+}
+
+/*Отступы для заголовков */
+.topnav {
+	display: grid;
+	grid-template-columns: minmax(auto, 100px) 1fr minmax(auto, 100px);
+	grid-template-rows: 80px;
+	justify-items: center;
+	align-items: center;
+}
+
+#me_logo {
+	border-radius: 50%;
+	width: 70px;
+	height: 70px;
+}
+
+.header_W {
+	display: grid;
+	grid-template-columns:repeat(5, 1fr);
+	grid-column-gap: 20px;
+    justify-items: center;
+}
+
+.header_word {
+    display: inline-block;
+    line-height: 1; 
+	font-weight: 600;
+	font-size: 18px;
+    color: #FFDA35; 
+}
+
+.header_word:after {
+    display: block; 
+    content: ""; /* контента в данном блоке не будет поэтому в кавычках ничего не ставим */
+    height: 3px; /* задаём высоту линии */
+    width: 0%; /* задаём начальную ширину элемента (линии) */
+    background-color: yellow; /*цвет фона элемента */
+    transition: width 0.4s ease-in-out; /*данное свойство отвечает за плавное изменение ширины. Здесь можно задать время анимации в секундах (в данном случае задано 0.4 секунды) */
+}
+
+.header_word:hover:after,
+.header_word:focus:after {
+    width: 100%;
+}
+
+.hamburger_box {
+  display: none;
+  position: absolute;
+  top: -10px;
+  height: 50px;
+  width: 70px; 
+}
+
+.overlay, .hamburger_box__close, .hamburger_box {
+	display: none;
+}
+
+/* ---------------ЦЕНТР---------------------*/
+.overlay {
+    position: absolute;
+    align-items: center;
+    height: 100vh;        
+    width: 100%;
+    background: #6e6e6e;
+    z-index: 1;
+}
+
+.main_back {
+    height: 100vh;        
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	background-image: url(../img/fon.jpg);
+	overflow: hidden;
+}
+
+/* ---------------НИЗ--------------------*/
+footer {
+	/* background: #6e6e6e; */
+	background-color: rgb(39, 39, 39);
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 70px;
+	justify-items: center;
+	align-items: end;
+}
+
+.footer {
+	display: grid;
+	grid-template-columns:repeat(2, 1fr);
+	grid-column-gap: 10px ;
+}
+
+.footer p {
+	font-weight: 600;
+	color: white;
+	font-size: 18px;
+}
+
+#email {
+	width: 45px;
+	height: 45px;
+}
+
+.email {
+	width: 45px;
+	height: 45px;
+}

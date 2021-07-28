@@ -1,0 +1,74 @@
+#chatbotInput {box-sizing: border-box;}
+
+#chat_box {
+  position: fixed;
+  bottom: 0;
+  padding: 70px 20px;
+  width: 280px;
+}
+
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  width: 280px;
+}
+
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  border: 3px solid #808080;
+  z-index: 9;
+  border-radius: 7px;
+}
+
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.form-container .btn {
+  background-color: #ff9e00;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+.form-container .cancel {
+  background-color: #9B111E;
+}
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 740px){ /*Стили этого запроса будут применяться только для экранных устройств с шириной области просмотра не более 740px */
+	#chat_box, .open-button {
+        display: none;
+	}
+}
