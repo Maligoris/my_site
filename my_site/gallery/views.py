@@ -7,7 +7,7 @@ def album_view(request):
     return render(request, 'gallery/gallery.html', {'albums': albums})
 
 def open_album(request, title_album=Album.title):
-    """ alb - поле в таблице Img связанное с Album через ForeignKey. __title - позволяет получить доступ к полю в Album. Так мы узнаем что фото из нужного нам альбома. """
+    """ alb - поле в таблице Img связанное с Album через ForeignKey. __title - позволяет получить доступ к полю title в Album. """
     photos = Img.objects.filter(alb__title=title_album)
     return render(request, 'gallery/details.html', {
         'photos': photos

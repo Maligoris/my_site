@@ -6,3 +6,4 @@ redis==3.5.3
 channels-redis==2.4.0
 daphne==3.0.1
 Psycopg2==2.8.6
+rasa==2.8.1

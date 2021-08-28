@@ -1,0 +1,35 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+
+responses:
+  utter_greet:
+  - text: "Привет! Как дела?"
+    image: "https://storage.googleapis.com/prod-media-bf-botfront-botfront-cloud/development/utter_sx0MSd0U_1580231513355-en.gif"
+
+  utter_cheer_up:
+  - text: "Не переживай, вот"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Помогло?"
+
+  utter_happy:
+  - text: "Отлично, продолжай!"
+
+  utter_goodbye:
+  - text: "Пока"
+
+  utter_iamabot:
+  - text: "Я бот, основанный на фреймворке Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

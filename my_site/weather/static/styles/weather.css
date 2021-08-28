@@ -2,9 +2,8 @@
    width: 310px;
    background-color: rgba(0%,0%, 0%, .5);
    color: rgba(255, 160, 0, 1);
-   position: right;
-   float: right;
-   margin-right: 5px;
+   float: left;
+   margin-left: 5px;
    margin-top: 5px;
 }
 

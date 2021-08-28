@@ -15,11 +15,10 @@ def weather_app(request):
         # Если данные не прошли проверку, то атрибут cleaned_data будет содержать только значения тех полей, что прошли проверку
             city = form.cleaned_data['City']
     else:
-        form = CityForm() # Очистка поля для формы ввода 
+        form = CityForm() # Очистка поля для формы ввода
 
     url="http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=" + api_key + "&lang=ru"
     res = requests.get(url.format(city)).json() # Делаем запрос погоды по указанному городу
-
     city_info = {}
 
     try:
