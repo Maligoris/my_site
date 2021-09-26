@@ -10,6 +10,9 @@
 	.me_logo, .vk_link, .header_word, .header_W, .open-button {
 		display: none;
 	}
+    #rasa-chat-widget-container {
+        display: none;
+    }
 
 	.hamburger_box {
 		display: block;
